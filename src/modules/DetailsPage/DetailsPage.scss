@@ -1,0 +1,350 @@
+@use '/src/styles/index' as *;
+
+
+.gallery {
+  display: flex;
+
+  gap: 16px;
+
+  align-items: center;
+
+}
+
+
+.nav-to-back {
+  width: 66px;
+
+  height: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 40px;
+
+  margin-bottom: 16px;
+
+}
+
+
+.nav-to-back__text {
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+
+.gallery-thumbs {
+  width: 80px;
+
+  height: 464px;
+
+  gap: 16px;
+
+
+  @include down(tablet) {
+    width: 35px;
+
+    height: 207px;
+
+  }
+
+}
+
+
+.gallery-thumbs img {
+  width: 80px;
+
+  height: 80px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  object-fit: contain;
+
+  cursor: pointer;
+
+
+  @include down(tablet) {
+    width: 35px;
+
+    height: 35px;
+
+  }
+
+}
+
+
+.gallery-main {
+  width: 464px;
+
+  height: 464px;
+
+
+  @include down(tablet) {
+    width: 287px;
+
+    height: 287px;
+
+  }
+
+}
+
+
+.gallery-main img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+}
+
+
+.details-info__main {
+  margin-top: 40px;
+
+  display: flex;
+
+  gap: 64px;
+
+  position: relative;
+
+
+  @include down(tablet) {
+    flex-direction: column;
+
+  }
+
+}
+
+
+.details-info__secondary {
+  display: flex;
+
+  margin-top: 80px;
+
+  gap: 64px;
+
+}
+
+
+.details-info__configurate-line {
+  width: 100%;
+
+  height: 0;
+
+
+  margin: 16px 0;
+
+
+  border: 1px solid #E2E6E9
+
+}
+
+
+.memory-buttons {
+  display: flex;
+
+  margin-top: 8px;
+
+  gap: 8px;
+
+}
+
+
+.memory-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 63px;
+
+  height: 32px;
+
+
+  border: 1px solid #B4BDC3
+
+}
+
+
+.memory-button--active {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 63px;
+
+  height: 32px;
+
+
+  color: $white-color;
+
+  background-color: $primary-color;
+
+}
+
+
+.block-buy {
+  margin-top: 32px;
+
+}
+
+
+.block-buy__price {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+
+.block-buy__buttons {
+  display: flex;
+
+  height: 48px;
+
+  gap: 8px;
+
+  margin-top: 16px;
+
+}
+
+
+.block-buy__button-add-to-cart {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 263px;
+
+  background: #313237;
+
+  color: #fff;
+
+}
+
+
+.block-buy__button-add-to-cart--active {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 263px;
+
+  background: $white-color;
+
+  color: $green-color;
+
+
+  border: 1px solid $elements-color
+
+}
+
+
+.info {
+  margin-top: 32px;
+
+}
+
+
+.info-details {
+  margin-top: 8px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+}
+
+
+.details-info__main-and-id-number {
+  display: flex;
+
+}
+
+
+.id-number {
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+
+  @include down(desktop) {
+    transform: translateX(-100px); // Від'ємне значення соває ліворуч
+
+  }
+
+}
+
+
+.info-details__about {
+  width: 560px;
+
+}
+
+
+.about-text {
+  margin-top: 32px;
+
+
+}
+
+
+.details-info__tech-xap {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 8px;
+}
+
+
+.details-info__tech {
+  flex: 1;
+
+}
+
+
+.details-info__tech-xaps {
+  margin-top: 25px;
+
+}
+
+
+.product-slider--detail {
+  margin: 0 80px;
+
+}
+
+
+.details-info__configurate {
+  width: 320px;
+
+  position: relative; // Робимо цей блок точкою відліку для ID
+
+
+  @include down(tablet) {
+    width: 100%;
+
+  }
+
+}

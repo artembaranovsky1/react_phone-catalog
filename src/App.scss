@@ -1,1 +1,8 @@
-// not empty
+@use '/src/styles/fonts.scss' as *;
+@use '/src/styles/color.scss' as *;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

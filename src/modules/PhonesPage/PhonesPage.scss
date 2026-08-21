@@ -1,0 +1,120 @@
+@use '/src/styles/index' as *;
+
+
+.phones-page__title {
+  margin-top: 40px;
+}
+
+.phones-page__content {
+  max-width: 1136px;
+  margin: auto;
+}
+
+.phones-page__number-phones {
+  margin-top: 8px;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.product-list__header {
+  display: flex;
+  gap: 16px;
+}
+
+.product-list__main {
+  display: grid;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @include down(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include down(tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+  }
+
+  @include down(phone) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.select {
+  position: relative;
+}
+
+.select__content {
+  display: flex;
+}
+
+.select__header {
+  display: flex;
+  width: 176px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid $icons-color;
+
+  @include transition(all, 0.5s);
+}
+
+.select__header:hover {
+  border: 1px solid $secondary-color;
+
+  // transform: scale(1.03);
+}
+
+.select__header--active {
+  border: 1px solid $secondary-color;
+}
+
+.select__active-bar {
+  position: absolute;
+  padding: 8px 1px;
+  top: 44px;
+  border: 1px solid $elements-color;
+  background-color: $white-color;
+
+  left: 0;
+}
+
+.select__active-bar-option {
+  width: 174px;
+  height: 32px;
+
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  color: $secondary-color;
+
+  @include transition(all, 0.5s);
+}
+
+.select__active-bar-option:hover {
+  background-color: $hover_bg-color;
+  color: $primary-color;
+}
+
+.select__icon {
+  transition: transform 0.3s ease;
+}
+
+.select__icon--rotate {
+  transform: rotate(180deg);
+}
+
+.button-next-prev {
+  margin-top: 16px;
+  margin-bottom: 80px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

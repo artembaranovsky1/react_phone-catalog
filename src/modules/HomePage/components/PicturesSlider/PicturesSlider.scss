@@ -1,0 +1,73 @@
+@use '/src/styles/text' as *;
+@use '/src/styles/color' as *;
+
+.pictures-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pictures-slider__up {
+  display: flex;
+}
+
+.pictures-slider__content {
+  display: flex;
+}
+
+
+.icon-large{
+  width: 32px;
+  height: 400px;
+  border: 1px solid $icons-color;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pictures-slider__pictures {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.pictures-slider__picture {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 16px;
+  width: 1040px;
+  height: 400px;
+  background-position: center;
+  object-fit: cover;
+}
+
+.pictures-slider__dots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  gap: 14px;
+}
+
+.pictures-slider__dot--active {
+  background-image: url("/serviceImg/icons/tech/rectangle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 14px;
+  height: 4px;
+}
+
+
+.pictures-slider__dot--disactive {
+  background-image: url("/serviceImg/icons/tech/rectangle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 14px;
+  height: 4px;
+
+  opacity: 0.25;
+}
+

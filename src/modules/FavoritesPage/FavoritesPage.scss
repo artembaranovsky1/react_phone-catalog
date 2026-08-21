@@ -1,0 +1,11 @@
+.favorite__list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: 4fr;
+  gap: 16px;
+}
+
+.favorite__product-card {
+  margin: 10px 0;
+}
+

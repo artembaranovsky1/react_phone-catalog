@@ -1,0 +1,143 @@
+@use '/src/styles/fonts.scss' as *;
+@use '/src/styles/color.scss' as *;
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  box-shadow: 0 1px 0 0 $elements-color;
+}
+
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar__left-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__right-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo-button {
+  box-sizing: border-box;
+  width: 128px;
+  height: 28px;
+  margin-left: 24px;
+}
+
+.navbar__logo {
+  display: flex;
+  width: 80px;
+  height: 28px;
+}
+
+.navbar__link {
+  display: flex;
+  gap: 64px;
+}
+
+
+.navbar__button {
+  color: $secondary-color;
+
+  font-family: Mont, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 4%;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navbar__button--active {
+  color: $primary-color;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+  font-family: Mont, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 4%;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navbar__button:hover {
+  color: $primary-color;
+}
+
+.navbar__button--active::after {
+  content: "";
+  position: absolute;
+  border-bottom: 3px solid $primary-color;
+  padding-bottom: 61px;
+  width: 100%;
+}
+
+.navbar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  background-color: $white-color;
+  box-shadow: -1px 0 0 0 $elements-color;
+}
+
+.navbar__icon--heart-empty {
+  background-image: url("/serviceImg/icons/heart/heart-empty.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+}
+
+.navbar__icon-counter {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  width: 14px;
+  height: 14px;
+  background-color: #EB5757;
+  border-radius: 50%;
+
+  border: 1px solid #FFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: $white-color;
+  font-weight: 600;
+  font-size: 9px;
+  text-align: center;
+}
+
+.navbar__icon--shopping-bag-counter {
+  // reserved for cart counter badge styling
+}
+
+.navbar__icon--shopping-bag {
+  background-image: url("/serviceImg/icons/shopping-bag/shopping-bag.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+}

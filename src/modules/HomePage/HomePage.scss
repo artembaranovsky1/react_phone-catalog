@@ -1,0 +1,87 @@
+@use '/src/styles/color' as *;
+@use '/src/styles/text' as *;
+@use '/src/styles/icons' as *;
+@use '/src/styles/index' as *;
+
+
+.disabled {
+  display: none;
+}
+
+.content {
+  max-width: 1136px;
+  margin: 0 auto;
+
+  @include down(desktop) {
+    margin: 0 32px
+  }
+
+  @include down(tablet) {
+    margin: 0 24px
+  }
+}
+
+.content__title {
+  margin: 56px 0;
+}
+
+
+.bg-category {
+  width: 368px;
+  height: 368px;
+  overflow: hidden;
+}
+
+.bg-category--phones {
+  background-color: #6D6474;
+}
+
+.bg-category--tablets {
+  background-color: #8D8D92;
+}
+
+.bg-category--accessories {
+  background-color: #973D5F;
+}
+
+.number-models {
+  color: $secondary-color
+}
+
+.categoty-photo {
+  position: relative;
+  right: -49px;
+  bottom: -40px;
+  height: 420px;
+
+  transition: transform 0.3s ease;
+}
+
+.categoty-photo:hover {
+  transform: scale(1.05);
+}
+
+
+.shop-by-category {
+  margin-top: 80px;
+  text-decoration: none;
+}
+
+.shop-by-category a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.shop-by-category__content {
+  display: flex;
+  margin-top: 24px;
+  gap: 16px;
+}
+
+.shop-by-category__title {
+  margin-top: 24px;
+}
+
+.shop-by-category__quentity {
+  margin-top: 4px;
+}
