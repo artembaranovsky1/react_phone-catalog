@@ -53,15 +53,15 @@ export const ProductSlider: React.FC<Props> = ({
       <div className="product-slider__list">
         <Swiper
           loop={false}
-          slidesPerView={4}
           spaceBetween={16}
+          slidesPerView="auto"
           onSwiper={s => {
             swiperRef.current = s;
           }}
           onSlideChange={s => setSlideIndex(s.activeIndex)}
         >
           {anyProducts.map((product: Product) => (
-            <SwiperSlide key={product.id}>
+            <SwiperSlide key={product.id} style={{ width: 'auto' }}>
               <ProductCard
                 key={product.id}
                 currentProduct={product}

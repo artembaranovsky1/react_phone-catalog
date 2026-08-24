@@ -1,9 +1,14 @@
 @use '/src/styles/fonts.scss' as *;
 @use '/src/styles/color.scss' as *;
+@use '/src/styles/mixins.scss' as *;
 
 .footer {
   height: 96px;
   box-shadow: 0 -1px 0 0 #E2E6E9;
+
+  @include down(phone) {
+    display: none;
+  }
 }
 
 .footer__logo {

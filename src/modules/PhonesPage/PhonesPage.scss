@@ -1,4 +1,5 @@
 @use '/src/styles/index' as *;
+@use '/src/styles/mixins' as *;
 
 
 .phones-page__title {
@@ -8,6 +9,14 @@
 .phones-page__content {
   max-width: 1136px;
   margin: auto;
+
+  @include down(tablet) {
+    margin: 0 24px;
+  }
+
+  @include down(phone) {
+    margin: 0 16px;
+  }
 }
 
 .phones-page__number-phones {
@@ -18,6 +27,19 @@
   display: flex;
   flex-direction: row;
   margin-top: 40px;
+
+  > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @include down(tablet) {
+    width: 100%;
+  }
+
+  @include down(phone) {
+    width: 100%;
+  }
 }
 
 .product-list__header {
@@ -32,16 +54,25 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 
+  justify-content: center;
+  align-items: center;
+
+
   @include down(desktop) {
     grid-template-columns: repeat(4, 1fr);
   }
 
   @include down(tablet) {
-    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include down(narrow-tablet) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include down(phone) {
     grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }
 
@@ -63,7 +94,13 @@
   border: 1px solid $icons-color;
 
   @include transition(all, 0.5s);
+
+  @include down(phone) {
+    max-width: 176px;
+    width: 136px;
+  }
 }
+
 
 .select__header:hover {
   border: 1px solid $secondary-color;

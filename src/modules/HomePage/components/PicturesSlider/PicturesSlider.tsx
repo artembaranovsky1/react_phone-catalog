@@ -5,9 +5,9 @@ import type { Swiper as SwiperClass } from 'swiper';
 
 export const PicturesSlider: React.FC = () => {
   const arrPicture = [
-    '/serviceImg/banners/banner-5.jpg',
+    '/serviceImg/banners/banner-1.png',
     '/serviceImg/banners/banner-2.png',
-    '/serviceImg/banners/banner-3.png',
+    '/serviceImg/banners/banner-6.png',
   ];
 
   const swiperRef = useRef<SwiperClass | null>(null);
