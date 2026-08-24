@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Thumbs } from 'swiper/modules';
@@ -15,18 +15,25 @@ type Props = {
 
 export const SwiperPhoto: React.FC<Props> = ({ selectedProduct }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 639);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 639);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const images = selectedProduct?.images || [];
 
   return (
     <div className="gallery">
-      <div className="gallery__thumbs">
+      <div className="gallery__thumbs-main">
         <Swiper
-          onSwiper={setThumbsSwiper}
-          direction="vertical"
-          slidesPerView={5}
-          spaceBetween={16}
-          className="gallery-thumbs"
+          modules={[Thumbs]}
+          thumbs={{ swiper: thumbsSwiper }}
+          className="gallery-main"
         >
           {images.map((image, i) => (
             <SwiperSlide key={i}>
@@ -36,11 +43,13 @@ export const SwiperPhoto: React.FC<Props> = ({ selectedProduct }) => {
         </Swiper>
       </div>
 
-      <div className="gallery__thumbs-main">
+      <div className="gallery__thumbs">
         <Swiper
-          modules={[Thumbs]}
-          thumbs={{ swiper: thumbsSwiper }}
-          className="gallery-main"
+          onSwiper={() => setThumbsSwiper}
+          direction={isMobile ? 'horizontal' : 'vertical'}
+          slidesPerView={5}
+          spaceBetween={16}
+          className="gallery-thumbs"
         >
           {images.map((image, i) => (
             <SwiperSlide key={i}>

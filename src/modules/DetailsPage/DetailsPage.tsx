@@ -115,7 +115,7 @@ export const Details: React.FC = () => {
     specIndex !== -1 ? normalizedColor(selectedItem?.color) : undefined;
 
   return (
-    <div className="details-page__content content">
+    <div className="details-page__content">
       <BarNavigation nameCategory="Tablets" nameProduct={selectedItem?.name} />
 
       <NavToBack />

@@ -1,6 +1,18 @@
-import React from 'react';
+import { Phone } from '../../../../types/Phone';
+import { Tablet } from '../../../../types/Tablet';
+import { Accessory } from '../../../../types/Accessory';
 
-export const AboutBlock = ({ selectedProduct }) => {
+type Device = Phone | Tablet | Accessory;
+type DescriptionBlock = {
+  title: string;
+  text: string[];
+};
+
+export const AboutBlock = ({
+  selectedProduct,
+}: {
+  selectedProduct: Device | undefined;
+}) => {
   const description = selectedProduct?.description;
 
   return (
@@ -10,7 +22,7 @@ export const AboutBlock = ({ selectedProduct }) => {
         <div className="details-info__configurate-line"></div>
 
         <div className="full-description">
-          {description?.map(desc => (
+          {description?.map((desc: DescriptionBlock) => (
             <div className="about-text" key={desc.title}>
               <p className="text-h4">{desc.title}</p>
               <p className="text-body secondary">{desc.text}</p>

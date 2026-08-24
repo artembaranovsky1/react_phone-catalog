@@ -42,7 +42,9 @@ export const AvaibleColorsConfigurate: React.FC<Props> = ({
 
   return (
     <div>
-      <p className="text-small secondary">Available colors</p>
+      <p className="details-info__configurate-text text-small secondary">
+        Available colors
+      </p>
       <div className="color-balls">
         {colorsAvailable?.map(color => (
           <div
