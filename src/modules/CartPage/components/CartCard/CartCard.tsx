@@ -64,56 +64,60 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
 
   return (
     <div className="cart__card">
-      <div
-        className="cart__card-delete"
-        onClick={() => {
-          handleDelete(currentProduct.id);
-          window.dispatchEvent(new Event('cart-update'));
-        }}
-      >
-        <div className="icon--close"></div>
-      </div>
-      <div className="cart__card-image">
-        <img
-          className="cart__card-image--photo"
-          src={`${currentProduct.image}`}
-          alt=""
-        />
-      </div>
+      <div className="cart__card--top">
+        <div
+          className="cart__card-delete"
+          onClick={() => {
+            handleDelete(currentProduct.id);
+            window.dispatchEvent(new Event('cart-update'));
+          }}
+        >
+          <div className="icon--close"></div>
+        </div>
+        <div className="cart__card-image">
+          <img
+            className="cart__card-image--photo"
+            src={`${currentProduct.image}`}
+            alt=""
+          />
+        </div>
 
-      <div className="cart__card-name">
-        <p className="text-body">{currentProduct.name}</p>
-      </div>
-
-      <div className="cart__card-quantity">
-        <div className="cart__card-quantity-button">
-          <div
-            className="icon icon-32"
-            onClick={() => {
-              if (quantity <= 1) {
-                setQuantity(1);
-              } else {
-                setQuantity(quantity - 1);
-              }
-            }}
-          >
-            <div className="icon--minus"></div>
-          </div>
-          <p className="text-body cart__card-quantity-text">{quantity}</p>
-          <div
-            className="icon icon-32"
-            onClick={() => {
-              setQuantity(quantity + 1);
-            }}
-          >
-            <div className="icon--plus"></div>
-          </div>
+        <div className="cart__card-name">
+          <p className="text-body">{currentProduct.name}</p>
         </div>
       </div>
-      <div className="cart__card-price">
-        <p className="text-h3 cart__card-price-price">
-          ${currentProduct.price * quantity}
-        </p>
+
+      <div className="cart__card--bottom">
+        <div className="cart__card-quantity">
+          <div className="cart__card-quantity-button">
+            <div
+              className="icon icon-32"
+              onClick={() => {
+                if (quantity <= 1) {
+                  setQuantity(1);
+                } else {
+                  setQuantity(quantity - 1);
+                }
+              }}
+            >
+              <div className="icon--minus"></div>
+            </div>
+            <p className="text-body cart__card-quantity-text">{quantity}</p>
+            <div
+              className="icon icon-32"
+              onClick={() => {
+                setQuantity(quantity + 1);
+              }}
+            >
+              <div className="icon--plus"></div>
+            </div>
+          </div>
+        </div>
+        <div className="cart__card-price">
+          <p className="text-h3 cart__card-price-price">
+            ${currentProduct.price * quantity}
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import { AccessoriesPage } from './modules/AccessoriesPage/AccessoriesPage';
 import { NotFoundPage } from './modules/NotFoundPage/NotFoundPage';
 import CartPage from './modules/CartPage/CartPage';
 import FavoritesPage from './modules/FavoritesPage/FavoritesPage';
+import MobileNavigation from './shared/Navigation/MobileNavigation';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <HashRouter>
@@ -16,6 +17,10 @@ createRoot(document.getElementById('root') as HTMLElement).render(
       <Route path="/" element={<App />}>
         <Route path="home" element={<Navigate to="/" replace />} />
         <Route index element={<HomePage />} />
+
+        <Route path="mobile-navigation">
+          <Route index element={<MobileNavigation />} />
+        </Route>
 
         <Route path="phones">
           <Route index element={<PhonesPage />} />
