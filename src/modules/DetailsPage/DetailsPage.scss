@@ -44,6 +44,10 @@
 
   margin-bottom: 16px;
 
+  @include down(phone) {
+    margin-top: 24px;
+  }
+
 }
 
 
@@ -135,6 +139,7 @@
 
   @include down(phone) {
     flex-direction: column;
+    margin-top: 32px;
   }
 
 }

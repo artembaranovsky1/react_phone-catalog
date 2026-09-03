@@ -28,6 +28,14 @@ html {
 .content__title {
   grid-column: 1 / -1;
   margin: 56px 0;
+
+  @include down(tablet) {
+    margin: 32px 0;
+  }
+
+  @include down(phone) {
+    margin: 24px 0;
+  }
 }
 
 
@@ -38,6 +46,7 @@ html {
   max-height: 368px;
   overflow: hidden;
   position: relative;
+
 
   @include down(phone) {
     aspect-ratio: 1 / 1;
@@ -107,11 +116,13 @@ html {
   gap: 16px;
 
   > a {
+    flex: 1 1 0;
     min-width: 0;
   }
 
   @include down(phone) {
     flex-direction: column;
+    gap: 32px;
 
     > a {
       flex: none;

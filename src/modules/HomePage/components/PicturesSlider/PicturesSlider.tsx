@@ -50,7 +50,7 @@ export const PicturesSlider: React.FC = () => {
       </div>
 
       <div className="pictures-slider__dots">
-        {arrPicture.map((image, i) => (
+        {arrPicture.map(i => (
           <div
             key={i}
             className={

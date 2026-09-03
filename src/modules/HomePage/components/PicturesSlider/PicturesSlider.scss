@@ -10,7 +10,7 @@
 
 .pictures-slider__up {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   height: 100%;
   gap: 16px;
 }
@@ -23,7 +23,6 @@
 .icon-large {
   flex-shrink: 0;
   width: 32px;
-  height: 100%;
   border: 1px solid $icons-color;
   display: flex;
   justify-content: center;

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
 import { useEffect, useState } from 'react';
+import { MobileNavigation } from './MobileNavigation';
 
 export const Navigation = () => {
   const [favCount, setFavCount] = useState(0);
@@ -161,17 +162,21 @@ export const Navigation = () => {
             </div>
 
             <div className="navbar__right-container">
-              <NavLink
+              <button
+                type="button"
                 className={
                   mobileNavActive
                     ? 'navbar__icon navbar__icon--close'
                     : 'navbar__icon navbar__icon--menu'
                 }
-                to={!mobileNavActive ? 'mobile-navigation' : '/'}
                 onClick={() => setMobileNavActive(!mobileNavActive)}
-              ></NavLink>
+              ></button>
             </div>
           </div>
+
+          {mobileNavActive && (
+            <MobileNavigation onLinkClick={() => setMobileNavActive(false)} />
+          )}
         </>
       )}
     </nav>

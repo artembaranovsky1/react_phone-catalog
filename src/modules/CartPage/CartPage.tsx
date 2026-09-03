@@ -70,7 +70,6 @@ export const CartPage = () => {
                   cart__message-button--confirm text-button`}
                 onClick={() => {
                   setCheckoutActive(false);
-                  // setCartState([]);
                 }}
               >
                 Confirm

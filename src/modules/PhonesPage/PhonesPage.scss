@@ -4,6 +4,10 @@
 
 .phones-page__title {
   margin-top: 40px;
+
+  @include down(phone) {
+    margin-top: 24px;
+  }
 }
 
 .phones-page__content {
@@ -39,12 +43,14 @@
 
   @include down(phone) {
     width: 100%;
+    margin-top: 32px;
   }
 }
 
 .product-list__header {
   display: flex;
   gap: 16px;
+  z-index: 10;
 }
 
 .product-list__main {
@@ -73,6 +79,7 @@
   @include down(phone) {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    gap: 40px;
   }
 }
 
@@ -113,6 +120,7 @@
 }
 
 .select__active-bar {
+  z-index: 10;
   position: absolute;
   padding: 8px 1px;
   top: 44px;
@@ -131,7 +139,7 @@
   align-items: center;
   color: $secondary-color;
 
-  @include transition(all, 0.5s);
+  @include transition(all, 0.3s);
 }
 
 .select__active-bar-option:hover {

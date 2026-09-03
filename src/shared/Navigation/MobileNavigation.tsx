@@ -1,7 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export const MobileNavigation = () => {
+type Props = {
+  onLinkClick: () => void;
+};
+
+export const MobileNavigation = ({ onLinkClick }: Props) => {
   const [favCount, setFavCount] = useState(0);
   const [cartCount, setCartCount] = useState(0);
 
@@ -31,13 +35,14 @@ export const MobileNavigation = () => {
   }, []);
 
   return (
-    <div className="MobileNavigation">
+    <div className="navbar--mobile__content">
       <div className="navbar-mobile__top">
         <NavLink
           className={({ isActive }) =>
             isActive ? 'navbar__button--active' : 'navbar__button'
           }
           to={'/'}
+          onClick={onLinkClick}
         >
           Home
         </NavLink>
@@ -46,6 +51,7 @@ export const MobileNavigation = () => {
             isActive ? 'navbar__button--active' : 'navbar__button'
           }
           to={'/phones'}
+          onClick={onLinkClick}
         >
           Phones
         </NavLink>
@@ -54,6 +60,7 @@ export const MobileNavigation = () => {
             isActive ? 'navbar__button--active' : 'navbar__button'
           }
           to={'/tablets'}
+          onClick={onLinkClick}
         >
           Tablets
         </NavLink>
@@ -62,6 +69,7 @@ export const MobileNavigation = () => {
             isActive ? 'navbar__button--active' : 'navbar__button'
           }
           to={'/accessories'}
+          onClick={onLinkClick}
         >
           Accessories
         </NavLink>
@@ -72,21 +80,23 @@ export const MobileNavigation = () => {
             className={({ isActive }) =>
               isActive
                 ? `navbar__icon-large navbar__icon--heart-empty
-                    navbar__button--active`
+                    navbar-mobile__button--active`
                 : `navbar__icon-large navbar__icon--heart-empty
                     navbar__icon--heart-counter`
             }
             to="/favorites"
+            onClick={onLinkClick}
           />
         ) : (
           <NavLink
             className={({ isActive }) =>
               isActive
                 ? `navbar__icon-large navbar__icon--heart-empty
-                    navbar__button--active`
+                    navbar-mobile__button--active`
                 : 'navbar__icon-large navbar__icon--heart-empty'
             }
             to="/favorites"
+            onClick={onLinkClick}
           >
             <div className="navbar__icon-large__inner">
               <span className="navbar__icon-counter navbar__icon-counter-large">
@@ -101,20 +111,22 @@ export const MobileNavigation = () => {
             className={({ isActive }) =>
               isActive
                 ? `navbar__icon-large navbar__icon--shopping-bag
-                    navbar__button--active`
+                    navbar-mobile__button--active`
                 : 'navbar__icon-large navbar__icon--shopping-bag'
             }
             to="/cart"
+            onClick={onLinkClick}
           ></NavLink>
         ) : (
           <NavLink
             className={({ isActive }) =>
               isActive
                 ? `navbar__icon-large navbar__icon--shopping-bag
-                    navbar__button--active`
+                    navbar-mobile__button--active`
                 : 'navbar__icon-large navbar__icon--shopping-bag'
             }
             to="/cart"
+            onClick={onLinkClick}
           >
             <div className="navbar__icon-large__inner">
               <span className="navbar__icon-counter navbar__icon-counter-large">

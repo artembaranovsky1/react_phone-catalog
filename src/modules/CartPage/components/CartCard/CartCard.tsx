@@ -91,7 +91,9 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
         <div className="cart__card-quantity">
           <div className="cart__card-quantity-button">
             <div
-              className="icon icon-32"
+              className={
+                quantity === 1 ? 'icon icon-32 icon-deactivate' : 'icon icon-32'
+              }
               onClick={() => {
                 if (quantity <= 1) {
                   setQuantity(1);
