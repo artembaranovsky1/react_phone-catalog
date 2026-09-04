@@ -21,7 +21,14 @@ export const Footer = () => {
           <div className="footer__logo"></div>
         </Link>
         <div className="footer__content-center">
-          <p className="footer__link">Github</p>
+          <a
+            href="https://github.com/artembaranovsky1"
+            target="_blank"
+            className="footer__link"
+            rel="noreferrer"
+          >
+            Github
+          </a>
           <p className="footer__link">Contacts</p>
           <p className="footer__link">rights</p>
         </div>

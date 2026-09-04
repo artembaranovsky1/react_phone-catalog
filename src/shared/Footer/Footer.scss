@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  max-width: 1136px;
   height: 100%;
 
   @include down(phone) {
@@ -95,4 +96,9 @@
   background-position: center;
   width: 16px;
   height: 16px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: $secondary-color;
 }

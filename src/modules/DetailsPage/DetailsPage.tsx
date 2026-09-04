@@ -48,6 +48,7 @@ type CartItem = {
 
 export const Details: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<Device[]>([]);
+  const [categoryLoaded, setCategoryLoaded] = useState(false);
 
   const location = useLocation();
 
@@ -70,16 +71,21 @@ export const Details: React.FC = () => {
   }, [favorite]);
 
   useEffect(() => {
-    fetch(`../public/api/${category}.json`)
+    setCategoryLoaded(false);
+
+    fetch(`/api/${category}.json`)
       .then(res => res.json())
 
-      .then(data => setSelectedCategory(data));
+      .then(data => {
+        setSelectedCategory(data);
+        setCategoryLoaded(true);
+      });
   }, [category]);
 
   const [arrProducts, setArrProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch(`../public/api/products.json`)
+    fetch(`/api/products.json`)
       .then(res => res.json())
 
       .then(data => setArrProducts(data));
@@ -113,6 +119,15 @@ export const Details: React.FC = () => {
 
   const currentColor: string | undefined =
     specIndex !== -1 ? normalizedColor(selectedItem?.color) : undefined;
+
+  if (categoryLoaded && !selectedItem) {
+    return (
+      <div className="details-page__content">
+        <NavToBack />
+        <p className="text-h2">Product was not found</p>
+      </div>
+    );
+  }
 
   return (
     <div className="details-page__content">
