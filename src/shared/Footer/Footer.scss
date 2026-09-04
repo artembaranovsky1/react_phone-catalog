@@ -88,6 +88,13 @@
   background-color: $white-color;
   box-sizing: border-box;
   border: 1px solid $elements-color;
+
+  @include transition(border-color);
+}
+
+.footer__button:hover {
+  border-color: $primary-color;
+  cursor: pointer;
 }
 
 .footer__button--up {
@@ -98,7 +105,16 @@
   height: 16px;
 }
 
-.footer__link {
+.footer__link,
+.footer__link--up {
   text-decoration: none;
   color: $secondary-color;
+  cursor: pointer;
+
+  @include transition(color);
+}
+
+.footer__link:hover,
+.footer__link--up:hover {
+  color: $primary-color;
 }

@@ -14,8 +14,8 @@ export const HomePage = () => {
       .then(data => setProducts(data));
   }, []);
 
-  const newProducts: Product[] = [...products].filter(
-    product => product.year === 2022,
+  const newProducts: Product[] = [...products].sort(
+    (product1, product2) => product2.year - product1.year,
   );
 
   const hotestProducts = [...products].sort(

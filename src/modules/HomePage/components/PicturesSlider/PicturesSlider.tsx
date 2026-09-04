@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './PicturesSlider.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper';
 
 export const PicturesSlider: React.FC = () => {
@@ -27,7 +28,12 @@ export const PicturesSlider: React.FC = () => {
 
         <div className="pictures-slider__pictures">
           <Swiper
+            modules={[Autoplay]}
             loop={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
             onSwiper={s => (swiperRef.current = s)}
             onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
           >
@@ -50,14 +56,15 @@ export const PicturesSlider: React.FC = () => {
       </div>
 
       <div className="pictures-slider__dots">
-        {arrPicture.map(i => (
+        {arrPicture.map((image, i) => (
           <div
-            key={i}
+            key={image}
             className={
               i === activeIndex
                 ? 'pictures-slider__dot--active'
                 : 'pictures-slider__dot--disactive'
             }
+            onClick={() => swiperRef.current?.slideToLoop(i)}
           />
         ))}
       </div>

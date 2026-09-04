@@ -82,6 +82,8 @@
   letter-spacing: 4%;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include transition(color);
 }
 
 .navbar__button--active {
@@ -150,11 +152,17 @@
   background-color: $white-color;
   box-shadow: -1px 0 0 0 $elements-color;
 
+  @include transition(background-color);
+
   @include down(tablet) {
     width: 48px;
     height: 48px;
   }
 
+}
+
+.navbar__icon:hover {
+  background-color: $hover_bg-color;
 }
 
 .navbar__icon-large {
@@ -270,10 +278,16 @@
   letter-spacing: 4%;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include transition(color);
 }
 
 .navbar--mobile__button {
   color: $secondary-color;
+}
+
+.navbar--mobile__button:hover {
+  color: $primary-color;
 }
 
 .navbar--mobile__button--active {
