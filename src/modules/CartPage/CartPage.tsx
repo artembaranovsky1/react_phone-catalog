@@ -16,7 +16,6 @@ export const CartPage = () => {
     return JSON.parse(localStorage.getItem('CartStore') || '[]');
   });
 
-
   useEffect(() => {
     localStorage.setItem('CartStore', JSON.stringify(cart));
   }, [cart]);
