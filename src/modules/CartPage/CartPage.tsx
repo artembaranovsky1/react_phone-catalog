@@ -20,6 +20,12 @@ export const CartPage = () => {
     localStorage.setItem('CartStore', JSON.stringify(cart));
   }, [cart]);
 
+  const allDelete = () => {
+    localStorage.setItem('CartStore', JSON.stringify([]));
+    setCartState([]);
+    window.dispatchEvent(new Event('delete-update'));
+  };
+
   return (
     <div className="content">
       <NavToBack />
@@ -70,6 +76,7 @@ export const CartPage = () => {
                   cart__message-button--confirm text-button`}
                 onClick={() => {
                   setCheckoutActive(false);
+                  allDelete();
                 }}
               >
                 Confirm

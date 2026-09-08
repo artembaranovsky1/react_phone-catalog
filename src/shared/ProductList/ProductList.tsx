@@ -2,6 +2,8 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Product } from '../../types/Product';
 import ProductCard from '../ProductCard/ProductCard';
+import { Loader } from '../Loader/Loader';
+import './ProductList.scss';
 // eslint-disable-next-line max-len
 import { SelectSortBy } from '../../modules/PhonesPage/components/SelectSortBy/SelectSortBy';
 // eslint-disable-next-line max-len
@@ -15,6 +17,9 @@ type Props = {
 
 export const ProductList: React.FC<Props> = ({ category }) => {
   const [productOfCategory, setProductOfCategory] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
   const [searchParams] = useSearchParams();
 
   const [cart, setCart] = useState<Product[]>(() => {
@@ -54,14 +59,25 @@ export const ProductList: React.FC<Props> = ({ category }) => {
   }, [favorite]);
 
   useEffect(() => {
+    setIsLoading(true);
+    setHasError(false);
+
     fetch('/api/products.json')
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to load products');
+        }
+
+        return res.json();
+      })
       .then(data =>
         setProductOfCategory(
           data.filter((product: Product) => product.category === category),
         ),
-      );
-  }, [category]);
+      )
+      .catch(() => setHasError(true))
+      .finally(() => setIsLoading(false));
+  }, [category, reloadKey]);
 
   const sort = searchParams.get('sort') || '';
   const perPage = searchParams.get('perPage') || '';
@@ -94,6 +110,41 @@ export const ProductList: React.FC<Props> = ({ category }) => {
     const end = start + Number(perPage);
 
     phonesOnPage = sortedPhones.slice(start, end);
+  }
+
+  if (isLoading) {
+    return (
+      <div className="product-list__content">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (hasError) {
+    return (
+      <div className="product-list__content">
+        <div className="product-list__message">
+          <p className="text-h3">Something went wrong</p>
+          <button
+            type="button"
+            className="button product-list__reload-button text-button"
+            onClick={() => setReloadKey(key => key + 1)}
+          >
+            Reload
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (productOfCategory.length === 0) {
+    return (
+      <div className="product-list__content">
+        <div className="product-list__message">
+          <p className="text-h3">There are no {category} yet</p>
+        </div>
+      </div>
+    );
   }
 
   return (

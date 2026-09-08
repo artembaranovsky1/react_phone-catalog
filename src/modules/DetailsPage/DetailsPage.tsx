@@ -129,6 +129,24 @@ export const Details: React.FC = () => {
     );
   }
 
+  function shuffle(arr) {
+    const result = [...arr];
+
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+
+    return result;
+  }
+
+  function getRandomItems(arr, count) {
+    return shuffle(arr).slice(0, count);
+  }
+
+  const randomProducts = getRandomItems(arrProducts, 20);
+
   return (
     <div className="details-page__content">
       <BarNavigation nameCategory="Tablets" nameProduct={selectedItem?.name} />
@@ -186,74 +204,6 @@ export const Details: React.FC = () => {
             </div>
           </div>
 
-          {/* <div className="details-info__configurate">*/}
-
-          {/* */}
-
-          {/* <div className="details-info__configurate-color">*/}
-
-          {/* <AvaibleColorsConfigurate*/}
-
-          {/* selectedProduct={selectedItem}*/}
-
-          {/* currentMemory={currentMemory}*/}
-
-          {/* />*/}
-
-          {/* </div>*/}
-
-          {/* <div className="details-info__configurate-line"></div>*/}
-
-          {/* <div className="details-info__configurate-memory">*/}
-
-          {/* <SelectCapacityConfigurate*/}
-
-          {/* selectedProduct={selectedItem}*/}
-
-          {/* currentColor={currentColor}*/}
-
-          {/* />*/}
-
-          {/* </div>*/}
-
-          {/* <div className="details-info__configurate-line"></div>*/}
-
-          {/* <div className="block-buy">*/}
-
-          {/* <PriceAndBuy*/}
-
-          {/* cart={cart}*/}
-
-          {/* selectedProduct={selectedProduct}*/}
-
-          {/* selectedItem={selectedItem}*/}
-
-          {/* setCart={setCartState}*/}
-
-          {/* favorite={favorite}*/}
-
-          {/* setFavoriteState={setFavoriteState}*/}
-
-          {/* />*/}
-
-          {/* </div>*/}
-
-          {/* <div className="info">*/}
-
-          {/* <InfoBlock selectedProduct={selectedItem} />*/}
-
-          {/* </div>*/}
-
-          {/* </div>*/}
-
-          {/* /!*<div className="id-number">*!/*/}
-
-          {/* /!* <p className="text-small secondary">ID:802390</p>*!/*/}
-
-          {/* /!*</div>*!/*/}
-
-          {/*</div>*/}
-
           <div className="details-info__secondary">
             <AboutBlock selectedProduct={selectedItem} />
 
@@ -263,7 +213,7 @@ export const Details: React.FC = () => {
           </div>
 
           <ProductSlider
-            anyProducts={arrProducts}
+            anyProducts={randomProducts}
             discount={true}
             title={'You may also like'}
             className="product-slider--detail"
