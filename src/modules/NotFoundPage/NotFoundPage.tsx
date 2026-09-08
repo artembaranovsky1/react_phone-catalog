@@ -5,7 +5,7 @@ export const NotFoundPage = () => {
     <div className="content not-found-page__content">
       <div className="text-h3">Page not found</div>
       <img
-        src="/public/img/page-not-found.png"
+        src={`${import.meta.env.BASE_URL}img/page-not-found.png`}
         alt=""
         className="not-found-page__photo"
       />

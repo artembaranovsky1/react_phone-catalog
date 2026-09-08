@@ -62,7 +62,7 @@ export const ProductList: React.FC<Props> = ({ category }) => {
     setIsLoading(true);
     setHasError(false);
 
-    fetch('/api/products.json')
+    fetch(`${import.meta.env.BASE_URL}api/products.json`)
       .then(res => {
         if (!res.ok) {
           throw new Error('Failed to load products');

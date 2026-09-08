@@ -51,7 +51,7 @@ export const Navigation = () => {
               <NavLink className="navbar__logo-button" to={'/'}>
                 <img
                   className="navbar__logo"
-                  src="/serviceImg/logo.svg"
+                  src={`${import.meta.env.BASE_URL}serviceImg/logo.svg`}
                   alt="logo"
                 />
               </NavLink>
@@ -155,7 +155,7 @@ export const Navigation = () => {
               <NavLink className="navbar__logo-button" to={'/'}>
                 <img
                   className="navbar__logo"
-                  src="/serviceImg/logo.svg"
+                  src={`${import.meta.env.BASE_URL}serviceImg/logo.svg`}
                   alt="logo"
                 />
               </NavLink>

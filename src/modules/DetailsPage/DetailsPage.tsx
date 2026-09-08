@@ -73,7 +73,7 @@ export const Details: React.FC = () => {
   useEffect(() => {
     setCategoryLoaded(false);
 
-    fetch(`/api/${category}.json`)
+    fetch(`${import.meta.env.BASE_URL}api/${category}.json`)
       .then(res => res.json())
 
       .then(data => {
@@ -85,7 +85,7 @@ export const Details: React.FC = () => {
   const [arrProducts, setArrProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch(`/api/products.json`)
+    fetch(`${import.meta.env.BASE_URL}api/products.json`)
       .then(res => res.json())
 
       .then(data => setArrProducts(data));

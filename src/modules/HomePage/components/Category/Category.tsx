@@ -9,7 +9,7 @@ export const Category = () => {
         <NavLink to={'/phones'} className="shop-by-category__link--phones">
           <div className="bg-category bg-category--phones">
             <img
-              src="/img/category-phones.webp"
+              src={`${import.meta.env.BASE_URL}img/category-phones.webp`}
               className="categoty-photo"
               alt="mobile phones categoty"
             />
@@ -23,7 +23,7 @@ export const Category = () => {
         <NavLink to={'/tablets'} className="shop-by-category__link--tablets">
           <div className="bg-category bg-category--tablets">
             <img
-              src="/img/category-tablets.webp"
+              src={`${import.meta.env.BASE_URL}img/category-tablets.webp`}
               className="categoty-photo"
               alt="tablets categoty"
             />
@@ -40,7 +40,7 @@ export const Category = () => {
         >
           <div className="bg-category bg-category--accessories">
             <img
-              src="/img/category-accessories.webp"
+              src={`${import.meta.env.BASE_URL}img/category-accessories.webp`}
               className="categoty-photo"
               alt="accessories categoty"
             />

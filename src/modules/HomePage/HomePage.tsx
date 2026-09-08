@@ -9,7 +9,7 @@ export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch('../public/api/products.json')
+    fetch(`${import.meta.env.BASE_URL}api/products.json`)
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
