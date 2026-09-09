@@ -10,6 +10,22 @@ import { NotFoundPage } from './modules/NotFoundPage/NotFoundPage';
 import CartPage from './modules/CartPage/CartPage';
 import FavoritesPage from './modules/FavoritesPage/FavoritesPage';
 
+document.title = 'Nice Gadgets';
+
+function setFavicon(url) {
+  let link = document.querySelector("link[rel~='icon']");
+
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+
+  link.href = url;
+}
+
+setFavicon('public/serviceImg/logo64.com.png');
+
 createRoot(document.getElementById('root') as HTMLElement).render(
   <HashRouter>
     <Routes>

@@ -61,10 +61,6 @@ export const PriceAndBuy = ({
     window.dispatchEvent(new Event('favUpdated'));
   };
 
-  // const isInCart = cart.some(
-  //   cartItem => cartItem?.item?.id === selectedItem.id,
-  // );
-
   const isInCart =
     cart?.some(cartItem => cartItem?.item?.id === selectedProduct?.id) || false;
 
@@ -100,13 +96,6 @@ export const PriceAndBuy = ({
           </div>
         )}
 
-        {/*<div*/}
-        {/*  className="block-buy__button-add-to-cart"*/}
-        {/*  onClick={() => handleAddToCart()}*/}
-        {/*>*/}
-        {/*  <p className="text-button">Add to cart</p>*/}
-        {/*</div>*/}
-
         <div className="icon icon-48" onClick={() => handleAddToFavorite()}>
           {!isInFavorite ? (
             <div className="icon--heart-empty"></div>
@@ -114,10 +103,6 @@ export const PriceAndBuy = ({
             <div className="icon--heart-fill"></div>
           )}
         </div>
-
-        {/*<div className="icon icon-48" onClick={() => handleAddToFavorite()}>*/}
-        {/*  <div className="icon--heart-empty"></div>*/}
-        {/*</div>*/}
       </div>
     </>
   );

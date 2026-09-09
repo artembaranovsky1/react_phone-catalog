@@ -5,7 +5,6 @@
   border: 1px solid $icons-color;
   background-color: $white-color;
 
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +24,7 @@
 }
 
 .icon-deactivate {
-  border-color: $elements-color
+  border-color: $elements-color;
 }
 
 .icon-deactivate:hover {
@@ -68,7 +67,7 @@
 }
 
 .icon--arrow-left {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-left.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-left.svg');
   width: 16px;
   height: 16px;
 
@@ -76,7 +75,7 @@
 }
 
 .icon--arrow-left-deactivate {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-left.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-left.svg');
   width: 16px;
   height: 16px;
 
@@ -84,7 +83,7 @@
 }
 
 .icon--arrow-right {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-right.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-right.svg');
   width: 16px;
   height: 16px;
 
@@ -92,7 +91,7 @@
 }
 
 .icon--arrow-right-deactivate {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-right.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-right.svg');
   width: 16px;
   height: 16px;
 
@@ -100,7 +99,7 @@
 }
 
 .icon--arrow-down {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-down.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-down.svg');
   width: 16px;
   height: 16px;
 
@@ -108,16 +107,15 @@
 }
 
 .icon--arrow-up {
-  background-image: url("/public/serviceImg/icons/arrow/arrow-up.svg");
+  background-image: url('/public/serviceImg/icons/arrow/arrow-up.svg');
   width: 16px;
   height: 16px;
 
   opacity: 1;
 }
 
-
 .icon--home {
-  background-image: url("/public/serviceImg/icons/tech/home.svg");
+  background-image: url('/public/serviceImg/icons/tech/home.svg');
   width: 16px;
   height: 16px;
 
@@ -125,7 +123,7 @@
 }
 
 .icon--menu {
-  background-image: url("/public/serviceImg/icons/tech/menu.svg");
+  background-image: url('/public/serviceImg/icons/tech/menu.svg');
   width: 16px;
   height: 16px;
 
@@ -133,7 +131,7 @@
 }
 
 .icon--close {
-  background-image: url("/public/serviceImg/icons/tech/close.svg");
+  background-image: url('/public/serviceImg/icons/tech/close.svg');
   width: 16px;
   height: 16px;
 
@@ -141,7 +139,7 @@
 }
 
 .icon--minus {
-  background-image: url("/public/serviceImg/icons/tech/minus.svg");
+  background-image: url('/public/serviceImg/icons/tech/minus.svg');
   width: 16px;
   height: 16px;
 
@@ -149,7 +147,7 @@
 }
 
 .icon--plus {
-  background-image: url("/public/serviceImg/icons/tech/plus.svg");
+  background-image: url('/public/serviceImg/icons/tech/plus.svg');
   width: 16px;
   height: 16px;
 
@@ -157,19 +155,27 @@
 }
 
 .icon--heart-empty {
-  background-image: url("/public/serviceImg/icons/heart/heart-empty.svg");
+  background-image: url('/public/serviceImg/icons/heart/heart-empty.svg');
   width: 16px;
   height: 16px;
 
   opacity: 1;
 }
 
+.icon--heart-empty:hover {
+  cursor: pointer;
+}
+
 .icon--heart-fill {
-  background-image: url("/public/serviceImg/icons/heart/heart-fill.svg");
+  background-image: url('/public/serviceImg/icons/heart/heart-fill.svg');
   width: 16px;
   height: 16px;
 
   opacity: 1;
+}
+
+.icon--heart-fill:hover {
+  cursor: pointer;
 }
 
 .icon:active .icon--arrow-left,

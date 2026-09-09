@@ -57,7 +57,6 @@ export const AvaibleColorsConfigurate: React.FC<Props> = ({
             }}
           >
             <div
-              // className="color-ball__contour"
               className={
                 color === selectedProduct?.color
                   ? 'color-ball__contour--active'

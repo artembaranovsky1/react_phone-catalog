@@ -9,13 +9,12 @@
   flex-direction: column;
 
   @include down(tablet) {
-    margin: 64px 0 80px ;
+    margin: 64px 0 80px;
   }
 
   @include down(phone) {
-    margin: 56px 0 64px ;
+    margin: 56px 0 64px;
   }
-
 }
 
 .product-slider__header {

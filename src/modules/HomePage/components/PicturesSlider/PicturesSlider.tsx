@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './PicturesSlider.scss';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperClass } from 'swiper';
@@ -8,7 +9,7 @@ export const PicturesSlider: React.FC = () => {
   const arrPicture = [
     `${import.meta.env.BASE_URL}serviceImg/banners/banner-1.png`,
     `${import.meta.env.BASE_URL}serviceImg/banners/banner-2.png`,
-    `${import.meta.env.BASE_URL}serviceImg/banners/banner-6.png`,
+    `${import.meta.env.BASE_URL}serviceImg/banners/banner-7.png`,
   ];
 
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -39,7 +40,9 @@ export const PicturesSlider: React.FC = () => {
           >
             {arrPicture.map((image, i) => (
               <SwiperSlide key={i}>
-                <img src={image} className="pictures-slider__picture" />
+                <Link to="/phones/apple-iphone-14-pro-256gb-spaceblack">
+                  <img src={image} className="pictures-slider__picture" />
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -43,7 +43,6 @@ export const SelectSortBy = ({}) => {
   return (
     <div className="select" ref={selectRef}>
       <div className="select__content">
-        {/*<div className="select__header" onClick={() => setIsActive(!isActive)}>*/}
         <div
           className={
             !isActive
@@ -53,7 +52,6 @@ export const SelectSortBy = ({}) => {
           onClick={() => setIsActive(!isActive)}
         >
           <div className="select__value">{normalizedSort || 'Newest'}</div>
-          {/*<div className="select__icon icon--arrow-down"></div>*/}
           <div
             className={`select__icon icon--arrow-down ${isActive ? 'select__icon--rotate' : ''}`}
           />

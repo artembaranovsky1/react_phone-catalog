@@ -46,7 +46,6 @@ html {
   }
 }
 
-
 .bg-category {
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -54,7 +53,6 @@ html {
   max-height: 368px;
   overflow: hidden;
   position: relative;
-
 
   @include down(phone) {
     aspect-ratio: 1 / 1;
@@ -66,19 +64,19 @@ html {
 }
 
 .bg-category--phones {
-  background-color: #6D6474;
+  background-color: #6d6474;
 }
 
 .bg-category--tablets {
-  background-color: #8D8D92;
+  background-color: #8d8d92;
 }
 
 .bg-category--accessories {
-  background-color: #973D5F;
+  background-color: #973d5f;
 }
 
 .number-models {
-  color: $secondary-color
+  color: $secondary-color;
 }
 
 .categoty-photo {
@@ -102,7 +100,6 @@ html {
 .categoty-photo:hover {
   transform: scale(1.1);
 }
-
 
 .shop-by-category {
   grid-column: 1 / -1;

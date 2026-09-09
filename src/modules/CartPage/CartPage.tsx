@@ -20,6 +20,18 @@ export const CartPage = () => {
     localStorage.setItem('CartStore', JSON.stringify(cart));
   }, [cart]);
 
+  useEffect(() => {
+    if (cart.length === 0) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = '';
+    }
+
+    return () => {
+      document.body.style.overflowY = '';
+    };
+  }, [cart.length]);
+
   const allDelete = () => {
     localStorage.setItem('CartStore', JSON.stringify([]));
     setCartState([]);
@@ -27,9 +39,14 @@ export const CartPage = () => {
   };
 
   return (
-    <div className="content">
-      <NavToBack />
-      <p className="text-h1">Cart</p>
+    <div className="card-page">
+      <div className="card-top">
+        <NavToBack />
+        <p className="text-h1">Cart</p>
+        <p className="text-body secondary phones-page__number-phones">
+          Your cart is empty
+        </p>
+      </div>
 
       <div className="cart__content">
         {cart.length === 0 ? (

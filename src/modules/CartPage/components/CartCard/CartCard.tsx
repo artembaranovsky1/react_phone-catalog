@@ -1,5 +1,6 @@
 import { Product } from '../../../../types/Product';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 type CartProduct = {
   item: Product;
@@ -63,11 +64,16 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
   };
 
   return (
-    <div className="cart__card">
+    <Link
+      to={`/${currentProduct.category}/${currentProduct.itemId}`}
+      className="cart__card"
+    >
       <div className="cart__card--top">
         <div
           className="cart__card-delete"
-          onClick={() => {
+          onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
             handleDelete(currentProduct.id);
             window.dispatchEvent(new Event('cart-update'));
           }}
@@ -94,7 +100,9 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
               className={
                 quantity === 1 ? 'icon icon-32 icon-deactivate' : 'icon icon-32'
               }
-              onClick={() => {
+              onClick={e => {
+                e.preventDefault();
+                e.stopPropagation();
                 if (quantity <= 1) {
                   setQuantity(1);
                 } else {
@@ -107,7 +115,9 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
             <p className="text-body cart__card-quantity-text">{quantity}</p>
             <div
               className="icon icon-32"
-              onClick={() => {
+              onClick={e => {
+                e.preventDefault();
+                e.stopPropagation();
                 setQuantity(quantity + 1);
               }}
             >
@@ -121,6 +131,6 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

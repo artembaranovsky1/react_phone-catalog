@@ -22,7 +22,6 @@ export const SelectCapacityConfigurate: React.FC<Props> = ({
       <div className="memory-buttons">
         {capacityAvailable?.map(memory => (
           <div
-            // className="memory-button"
             className={
               memory === selectedProduct?.capacity
                 ? 'memory-button--active'

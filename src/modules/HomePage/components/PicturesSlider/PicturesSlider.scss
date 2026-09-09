@@ -19,7 +19,6 @@
   display: flex;
 }
 
-
 .icon-large {
   flex-shrink: 0;
   width: 32px;
@@ -32,7 +31,6 @@
     display: none;
   }
 }
-
 
 .pictures-slider__pictures {
   flex: 1;
@@ -70,7 +68,7 @@
 }
 
 .pictures-slider__dot--active {
-  background-image: url("/serviceImg/icons/tech/rectangle.svg");
+  background-image: url('/serviceImg/icons/tech/rectangle.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 14px;
@@ -78,9 +76,8 @@
   cursor: pointer;
 }
 
-
 .pictures-slider__dot--disactive {
-  background-image: url("/serviceImg/icons/tech/rectangle.svg");
+  background-image: url('/serviceImg/icons/tech/rectangle.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 14px;
@@ -89,4 +86,3 @@
 
   opacity: 0.25;
 }
-

@@ -1,4 +1,3 @@
-import './Category.scss';
 import { NavLink } from 'react-router-dom';
 
 export const Category = () => {

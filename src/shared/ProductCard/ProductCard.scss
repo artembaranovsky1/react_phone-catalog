@@ -4,7 +4,6 @@
 @use '/src/styles/index' as *;
 @use '/src/styles/mixins' as *;
 
-
 .card {
   position: relative;
   box-sizing: border-box;
@@ -18,7 +17,6 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-
 
   @include down(tablet) {
     width: 100%;
@@ -51,7 +49,6 @@
   flex-direction: column;
   color: $primary-color;
 }
-
 
 .card__photo {
   width: 100%;
@@ -90,7 +87,7 @@
 .card__price-group {
   display: flex;
   margin-top: 8px;
-  gap: 8px
+  gap: 8px;
 }
 
 .card__fullprice {
@@ -116,7 +113,6 @@
 
 .card__info-feature {
   color: $secondary-color;
-
 }
 
 .card__button-group {
@@ -153,7 +149,7 @@
   max-width: 160px;
   width: 100%;
   height: 40px;
-  border: 1px solid #E2E6E9;
+  border: 1px solid #e2e6e9;
 
   @include down(tablet) {
     max-width: none;
@@ -167,13 +163,9 @@
 }
 
 .text-added {
-  color: $green-color
+  color: $green-color;
 }
 
 .card__button-favorite {
   background-color: $white-color;
 }
-
-
-
-

@@ -1,6 +1,5 @@
 @use '/src/styles/color' as *;
 
-
 .text-h1 {
   font-weight: 800;
   font-size: 48px;
@@ -54,7 +53,6 @@
   font-size: 12px;
   line-height: 15px;
 }
-
 
 .secondary {
   color: $secondary-color;

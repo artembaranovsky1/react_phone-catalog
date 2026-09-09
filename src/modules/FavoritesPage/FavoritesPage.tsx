@@ -26,7 +26,7 @@ export const FavoritesPage = () => {
   }, []);
 
   return (
-    <div className="content">
+    <div className="favorite-content">
       <BarNavigation nameCategory="Favorites" />
       <h1 className="text-h1 phones-page__title">Favourites</h1>
       <p className="text-body secondary">{favorite.length} items</p>
