@@ -24,7 +24,7 @@ function setFavicon(url) {
   link.href = url;
 }
 
-setFavicon('public/serviceImg/logo64.com.png');
+setFavicon('public/serviceImg/logo64.png');
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <HashRouter>
