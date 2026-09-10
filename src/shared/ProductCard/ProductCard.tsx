@@ -113,7 +113,13 @@ export const ProductCard: React.FC<PropsCardProps> = ({
           />
         </Link>
 
-        <p className="card__title text-body">{currentProduct.name}</p>
+        <Link
+          to={`/${currentProduct.category}/${currentProduct.itemId}`}
+          onClick={() => handleOpenProductCard(currentProduct.itemId)}
+          className="card__title text-body"
+        >
+          {currentProduct.name}
+        </Link>
 
         {discount ? (
           <div className="card__price-group">

@@ -10,6 +10,33 @@ type CartItem = {
   quantity: number;
 };
 
+export const useCartQuantity = () => {
+  const [totalQuantity, setTotalQuantity] = useState<number>(0);
+
+  useEffect(() => {
+    const updateQuantity = () => {
+      const cart: CartItem[] = JSON.parse(
+        localStorage.getItem('CartStore') || '[]',
+      );
+      const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      setTotalQuantity(total);
+    };
+
+    updateQuantity();
+
+    window.addEventListener('quantity-update', updateQuantity);
+    window.addEventListener('delete-update', updateQuantity);
+
+    return () => {
+      window.removeEventListener('quantity-update', updateQuantity);
+      window.removeEventListener('delete-update', updateQuantity);
+    };
+  }, []);
+
+  return totalQuantity;
+};
+
 export const CartPage = () => {
   const [checkoutActive, setCheckoutActive] = useState<boolean>(false);
   const [cart, setCartState] = useState<CartItem[]>(() => {
@@ -43,9 +70,6 @@ export const CartPage = () => {
       <div className="card-top">
         <NavToBack />
         <p className="text-h1">Cart</p>
-        <p className="text-body secondary phones-page__number-phones">
-          Your cart is empty
-        </p>
       </div>
 
       <div className="cart__content">

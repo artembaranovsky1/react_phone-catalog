@@ -2,12 +2,14 @@ import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
 import { useEffect, useState } from 'react';
 import { MobileNavigation } from './MobileNavigation';
+import { useCartQuantity } from '../../modules/CartPage/CartPage';
 
 export const Navigation = () => {
   const [favCount, setFavCount] = useState(0);
-  const [cartCount, setCartCount] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 639);
   const [mobileNavActive, setMobileNavActive] = useState(false);
+
+  const cartCount = useCartQuantity();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 639);
@@ -19,10 +21,8 @@ export const Navigation = () => {
 
   const refreshCounts = () => {
     const favorites = JSON.parse(localStorage.getItem('FavoriteStore') || '[]');
-    const cart = JSON.parse(localStorage.getItem('CartStore') || '[]');
 
     setFavCount(favorites.length);
-    setCartCount(cart.length);
   };
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-export const SelectPerPage = ({}) => {
+export const SelectPerPage = () => {
   const [isActive, setIsActive] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -13,6 +13,8 @@ export const SelectPerPage = ({}) => {
     } else {
       params.set('perPage', page);
     }
+
+    params.delete('page');
 
     setSearchParams(params);
   };

@@ -18,6 +18,8 @@ export const SelectSortBy = ({}) => {
       params.set('sort', value);
     }
 
+    params.delete('page');
+
     setSearchParams(params);
   };
 

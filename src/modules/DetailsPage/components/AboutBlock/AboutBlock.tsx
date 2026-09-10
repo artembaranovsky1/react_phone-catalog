@@ -13,8 +13,6 @@ export const AboutBlock = ({
 }: {
   selectedProduct: Device | undefined;
 }) => {
-  const description = selectedProduct?.description;
-
   return (
     <>
       <div className="info-details__about">
@@ -22,7 +20,7 @@ export const AboutBlock = ({
         <div className="details-info__configurate-line"></div>
 
         <div className="full-description">
-          {description?.map((desc: DescriptionBlock) => (
+          {selectedProduct?.description?.map((desc: DescriptionBlock) => (
             <div className="about-text" key={desc.title}>
               <p className="text-h4">{desc.title}</p>
               <p className="text-body secondary">{desc.text}</p>

@@ -75,7 +75,6 @@ export const CartCard: React.FC<Props> = ({ product, setCartState }) => {
             e.preventDefault();
             e.stopPropagation();
             handleDelete(currentProduct.id);
-            window.dispatchEvent(new Event('cart-update'));
           }}
         >
           <div className="icon--close"></div>
